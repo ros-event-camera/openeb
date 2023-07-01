@@ -62,10 +62,10 @@ set(GENERATE_FILES_DIRECTORY ${CMAKE_BINARY_DIR}/generated)
 file(MAKE_DIRECTORY ${GENERATE_FILES_DIRECTORY})
 
 # Update CMAKE_MODULE_PATH
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/Modules) # For find_packages()
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/custom_functions) # For defining custom cmake functions
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/custom_targets) # For defining custom cmake targets
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/cpack) # For cpack
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/Modules) # For find_packages()
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/custom_functions) # For defining custom cmake functions
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/custom_targets) # For defining custom cmake targets
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/cpack) # For cpack
 
 include(CMakeDependentOption)
 include(overridden_cmake_functions)

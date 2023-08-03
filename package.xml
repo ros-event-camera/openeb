@@ -13,8 +13,12 @@
   <buildtool_depend>git</buildtool_depend>
   <buildtool_depend>cmake</buildtool_depend>
   <buildtool_depend>hdf5-tools</buildtool_depend>
+  <buildtool_depend>pkg-config</buildtool_depend>
   <depend>boost</depend>
+  <depend>libusb-1.0</depend>
   <depend>libusb-1.0-dev</depend>
+  <depend>libusb</depend>
+  <depend>libusb-dev</depend>
   <depend>libhdf5-dev</depend>
   <depend>libglew-dev</depend>
   <depend>libglfw3-dev</depend>

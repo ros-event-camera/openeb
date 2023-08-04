@@ -41,6 +41,6 @@ install(DIRECTORY inc src
         COMPONENT metavision-sdk-core-samples
 )
 
-if (BUILD_TESTING)
+if (OPENEB_BUILD_TESTS)
     add_subdirectory(test)
 endif ()

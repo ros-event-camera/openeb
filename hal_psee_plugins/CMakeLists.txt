@@ -34,9 +34,9 @@ add_subdirectory(apps)
 add_subdirectory(samples)
 
 # Tests
-if (BUILD_TESTING)
+if (OPENEB_BUILD_TESTS)
     add_subdirectory(test)
-endif (BUILD_TESTING)
+endif (OPENEB_BUILD_TESTS)
 
 # Project Raven
 if (EXISTS "${CMAKE_CURRENT_LIST_DIR}/raven")

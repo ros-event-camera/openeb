@@ -22,9 +22,9 @@ if (GENERATE_DOC)
 endif (GENERATE_DOC)
 
 # Unit tests for SDK Core
-if (BUILD_TESTING)
+if (OPENEB_BUILD_TESTS)
     add_subdirectory(tests)
-endif (BUILD_TESTING)
+endif (OPENEB_BUILD_TESTS)
 
 
 # Cpack

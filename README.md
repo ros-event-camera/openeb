@@ -137,7 +137,7 @@ python3 -m pip install "numba==0.56.3" "profilehooks==1.12.0" "pytorch_lightning
     the automatically generated ``Source.Code.*`` archives. This is because the latter do not include
     a necessary submodule.)
  2. Create and open the build directory in the `openeb` folder (absolute path to this directory is called `OPENEB_SRC_DIR` in next sections): `cd openeb; mkdir build && cd build`
- 3. Generate the makefiles using CMake: `cmake .. -DBUILD_TESTING=OFF`.
+ 3. Generate the makefiles using CMake: `cmake .. -DOPENEB_BUILD_TESTS=OFF`.
     If you want to specify to cmake which version of Python to consider, you should use the option ``-DPython3_EXECUTABLE=<path_to_python_to_use>``.
     This is useful, for example, when you have a more recent version of Python than the ones we support installed on your system.
     In that case, cmake would select it and compilation might fail.
@@ -205,7 +205,7 @@ Running the test suite is a sure-fire way to ensure you did everything well with
 
   ```bash
   cd <OPENEB_SRC_DIR>/build
-  cmake .. -DBUILD_TESTING=ON
+  cmake .. -DOPENEB_BUILD_TESTS=ON
   ```
 
  * Compile again.  `cmake --build . --config Release -- -j 4`
@@ -359,7 +359,7 @@ or you can deploy the OpenEB files (applications, samples, libraries etc.) in a 
     when generating the solution in step 2:
 
     ```bash
-    cmake -A x64 -DCMAKE_TOOLCHAIN_FILE=<OPENEB_SRC_DIR>\cmake\toolchains\vcpkg.cmake -DVCPKG_DIRECTORY=<VCPKG_SRC_DIR> -DCMAKE_INSTALL_PREFIX=<OPENEB_INSTALL_DIR> -DPYTHON3_SITE_PACKAGES=<PYTHON3_PACKAGES_INSTALL_DIR> -DBUILD_TESTING=OFF ..
+    cmake -A x64 -DCMAKE_TOOLCHAIN_FILE=<OPENEB_SRC_DIR>\cmake\toolchains\vcpkg.cmake -DVCPKG_DIRECTORY=<VCPKG_SRC_DIR> -DCMAKE_INSTALL_PREFIX=<OPENEB_INSTALL_DIR> -DPYTHON3_SITE_PACKAGES=<PYTHON3_PACKAGES_INSTALL_DIR> -DOPENEB_BUILD_TESTS=OFF ..
     ```
     
   *  You can now launch the actual compilation and installation of the OpenEB files (your console should be launched as an administrator) :
@@ -436,7 +436,7 @@ Running the test suite is a sure-fire way to ensure you did everything well with
 
         ```
         cd <OPENEB_SRC_DIR>/build
-        cmake -A x64 -DCMAKE_TOOLCHAIN_FILE=<OPENEB_SRC_DIR>\cmake\toolchains\vcpkg.cmake -DVCPKG_DIRECTORY=<VCPKG_SRC_DIR> -DBUILD_TESTING=ON ..
+        cmake -A x64 -DCMAKE_TOOLCHAIN_FILE=<OPENEB_SRC_DIR>\cmake\toolchains\vcpkg.cmake -DVCPKG_DIRECTORY=<VCPKG_SRC_DIR> -DOPENEB_BUILD_TESTS=ON ..
         ```
     2. Compile: `cmake --build . --config Release --parallel 4`
 
@@ -445,7 +445,7 @@ Running the test suite is a sure-fire way to ensure you did everything well with
 
     1. Generate the Visual Studio files using CMake (adapt the command to your Visual Studio version):
 
-        `cmake -G "Visual Studio 17 2022" -A x64 -DCMAKE_TOOLCHAIN_FILE=<OPENEB_SRC_DIR>\cmake\toolchains\vcpkg.cmake -DVCPKG_DIRECTORY=<VCPKG_SRC_DIR> -DBUILD_TESTING=ON ..`
+        `cmake -G "Visual Studio 17 2022" -A x64 -DCMAKE_TOOLCHAIN_FILE=<OPENEB_SRC_DIR>\cmake\toolchains\vcpkg.cmake -DVCPKG_DIRECTORY=<VCPKG_SRC_DIR> -DOPENEB_BUILD_TESTS=ON ..`
 
         Note that the value passed to the parameter `-DCMAKE_TOOLCHAIN_FILE` must be an absolute path, not a relative one.
 

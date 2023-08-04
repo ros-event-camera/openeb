@@ -42,7 +42,7 @@ jobs:
           mkdir build && cd build
           cmake -A x64 -DCMAKE_PREFIX_PATH="$CONDA/envs/test/Library" \
                 -D Python3_EXECUTABLE=$python_executable \
-                -DBUILD_TESTING=ON ..
+                -DOPENEB_BUILD_TESTS=ON ..
           cmake --build . --config Release --parallel 4
 
       - name: Move DLLs into /build

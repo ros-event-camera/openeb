@@ -44,7 +44,7 @@ jobs:
       - name: Build openEB
         run: |
           mkdir build && cd build
-          cmake .. -DBUILD_TESTING=ON
+          cmake .. -DOPENEB_BUILD_TESTS=ON
           cmake --build . --config Release --parallel 4
 
       - name: Getting datasets from storage
@@ -91,7 +91,7 @@ jobs:
       - name: Build openEB
         run: |
           mkdir build && cd build
-          cmake .. -DBUILD_TESTING=ON
+          cmake .. -DOPENEB_BUILD_TESTS=ON
           cmake --build . --config Release --parallel 4
 
       - name: Getting datasets from storage
@@ -152,7 +152,7 @@ jobs:
           cmake -A x64 -DCMAKE_TOOLCHAIN_FILE="../cmake/toolchains/vcpkg.cmake" \
                 -DVCPKG_DIRECTORY=`realpath ../../vcpkg` \
                 -D Python3_EXECUTABLE=$python_executable \
-                -DBUILD_TESTING=ON ..
+                -DOPENEB_BUILD_TESTS=ON ..
           cmake --build . --config Release --parallel 4
 
       - name: Getting datasets from storage

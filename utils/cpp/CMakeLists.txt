@@ -7,10 +7,10 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and limitations under the License.
 
-if (BUILD_TESTING)
+if (OPENEB_BUILD_TESTS)
     # Utils to write gtests
     add_subdirectory(gtest)
-endif (BUILD_TESTING)
+endif (OPENEB_BUILD_TESTS)
 if(COMPILE_PYTHON3_BINDINGS)
     # Utils to write python bindings
     add_subdirectory(pybind)

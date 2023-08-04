@@ -54,9 +54,9 @@ add_custom_command(TARGET hal_sample_plugin POST_BUILD
 
 
 # Tests
-if (BUILD_TESTING)
+if (OPENEB_BUILD_TESTS)
     add_subdirectory(test)
-endif (BUILD_TESTING)
+endif (OPENEB_BUILD_TESTS)
 
 # Install sample
 install(DIRECTORY include src

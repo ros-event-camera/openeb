@@ -45,9 +45,9 @@ add_subdirectory(apps)
 add_subdirectory(samples)
 
 # Tests
-if (BUILD_TESTING)
+if (OPENEB_BUILD_TESTS)
     add_subdirectory(test)
-endif (BUILD_TESTING)
+endif (OPENEB_BUILD_TESTS)
 
 add_cpack_component(PUBLIC metavision-hal-bin metavision-hal-samples metavision-hal-lib metavision-hal-dev)
 

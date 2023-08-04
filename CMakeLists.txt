@@ -192,7 +192,7 @@ set (boost_components_to_find program_options filesystem timer chrono thread)
 find_package(Boost COMPONENTS ${boost_components_to_find} REQUIRED)
 
 # Python 3 for bindings and pytests
-if (COMPILE_PYTHON3_BINDINGS OR BUILD_TESTING)
+if (COMPILE_PYTHON3_BINDINGS OR OPENEB_BUILD_TESTS)
     include(python3)
 endif ()
 
@@ -214,7 +214,7 @@ endif (GENERATE_DOC)
 
 # Tests
 include(CTest)
-if (BUILD_TESTING)
+if (OPENEB_BUILD_TESTS)
     # Gtest
     find_package(GTest CONFIG)
     if (NOT GTest_FOUND)
@@ -315,7 +315,7 @@ if (BUILD_TESTING)
 
     include(register_gtest)
 
-endif (BUILD_TESTING)
+endif (OPENEB_BUILD_TESTS)
 
 # Code coverage
 if (CODE_COVERAGE)

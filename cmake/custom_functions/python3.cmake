@@ -148,7 +148,7 @@ if (COMPILE_PYTHON3_BINDINGS)
     endif()
 endif()
 
-if (BUILD_TESTING)
+if (OPENEB_BUILD_TESTS)
     # TODO : MV-167, remove this part, there should be no more PYTEST_PYTHON_VERSION variable, and we
     # should test that pytest is available for all versions in the foreach loop above
     if (PYTEST_PYTHON_VERSION)
@@ -166,7 +166,7 @@ if (BUILD_TESTING)
         )
         if(res AND NOT res EQUAL 0)
             message(FATAL_ERROR "Error when executing '${Python3_EXECUTABLE} -c \"import pytest\"'"
-            "\n${err}Either install pytest or disable option BUILD_TESTING\n"
+            "\n${err}Either install pytest or disable option OPENEB_BUILD_TESTS\n"
             "To install pytest, run :\n    ${Python3_EXECUTABLE} -m pip install pytest")
         endif(res AND NOT res EQUAL 0)
     endif(NOT CMAKE_CROSSCOMPILING)

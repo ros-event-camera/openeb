@@ -28,6 +28,6 @@ endforeach(sample)
 add_cpack_component(PUBLIC metavision-decoders-samples)
 
 # Test applications
-if (BUILD_TESTING)
+if (OPENEB_BUILD_TESTS)
     add_subdirectory(test)
-endif (BUILD_TESTING)
+endif (OPENEB_BUILD_TESTS)

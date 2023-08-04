@@ -22,8 +22,8 @@ if (GENERATE_DOC)
 endif (GENERATE_DOC)
 
 # Tests
-if (BUILD_TESTING)
+if (OPENEB_BUILD_TESTS)
     add_subdirectory(tests)
-endif (BUILD_TESTING)
+endif (OPENEB_BUILD_TESTS)
 
 add_cpack_component(PUBLIC metavision-sdk-base-lib metavision-sdk-base-dev metavision-sdk-base-bin metavision-sdk-base-samples)

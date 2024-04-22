@@ -26,6 +26,11 @@ else(PROJECT_VERSION_SUFFIX STREQUAL "")
     set(PROJECT_VERSION_FULL "${PROJECT_VERSION}-${PROJECT_VERSION_SUFFIX}")
 endif(PROJECT_VERSION_SUFFIX STREQUAL "")
 
+# these settings are specific for building the ROS version of openeb
+set(COMPILE_PLAYER OFF CACHE INTERNAL "Build player")
+set(COMPILE_PYTHON3_BINDINGS OFF CACHE INTERNAL "build python3 bindings")
+set(UDEV_RULES_SYSTEM_INSTALL OFF CACHE INTERNAL "install udev rules")
+
 # Set output directory for build targets
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib/ CACHE PATH "Output directory of libraries.")
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib/ CACHE PATH "Output directory of all executables.")
